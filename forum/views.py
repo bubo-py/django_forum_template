@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from .models import ForumThread
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 
 def index(request):
@@ -13,4 +13,5 @@ def index(request):
 
 
 def thread_detail(request, thread_id):
-    return HttpResponse(f"this is thread number {thread_id}")
+    thread = get_object_or_404(ForumThread, pk=thread_id)
+    return render(request, 'forum/thread_detail.html', {'thread': thread})
