@@ -1,16 +1,11 @@
 <h1>adding a thread here!</h1>
 
-<form action="{% url 'add' %}" method="post">
+
+<form action="" method="post">
     {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+    </table>
 
-    <label for="heading">thread heding</label>
-    <input type="text" name="heading"><br><br>
-
-    <label for="heading">thread content</label>
-    <input type="text" name="content"><br><br>
-
-    <label for="added_by">added by</label>
-    <input type="email" name="added_by">
-
-    <input type="submit" value="add">
+    <input type="submit" value="ok add">
 </form>
