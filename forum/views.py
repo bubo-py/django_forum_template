@@ -1,5 +1,6 @@
 from .models import ForumThread
 from django.shortcuts import render, get_object_or_404
+from .forms import AddThreadForm
 
 
 def index(request):
@@ -17,4 +18,11 @@ def thread_detail(request, thread_id):
 
 
 def add_thread(request):
-    return render(request, 'forum/add_thread.html')
+    form = AddThreadForm(request.POST)
+
+    thread = form.save(commit=False)
+    thread.author = request.user
+    thread.save()
+
+    context = {'form': form}
+    return render(request, 'forum/add_thread.html', context)
