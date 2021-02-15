@@ -1,0 +1,15 @@
+{% if messages %}
+    {% for message in messages %}
+        {{ message }}
+    {% endfor %}
+{% endif %}
+<form method="post">
+    {% csrf_token %}
+    <table>
+        {{ form.as_p }}
+    </table>
+
+    <input type="submit" value="ok add">
+    <br><br>
+    <a href="#">log in if already have an account</a>
+</form>
