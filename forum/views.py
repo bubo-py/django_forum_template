@@ -14,11 +14,17 @@ def thread_detail(request, thread_id):
 
 
 def add_thread(request):
-    form = AddThreadForm(request.POST)
+    if request.method == 'POST':
+        form = AddThreadForm(request.POST)
+        form.author = request.user
+        if form.is_valid():
+            # this saves the thread but doesn't commit to db
+            form = form.save(commit=False)
+            form.author = request.user  # set logged user as an author and then save
+            form.save()
 
-    thread = form.save(commit=False)
-    thread.author = request.user
-    thread.save()
+    else:
+        form = AddThreadForm()
 
     context = {'form': form}
     return render(request, 'forum/add_thread.html', context)
