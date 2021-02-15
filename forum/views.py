@@ -4,10 +4,6 @@ from .forms import AddThreadForm
 
 
 def index(request):
-    # threads = ForumThread.objects.all()
-    # context = {
-    #     'threads': threads
-    # }
     template = 'forum/index.html'
     return render(request, template)
 
