@@ -1,5 +1,5 @@
 from .models import ForumThread
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .forms import AddThreadForm
 
 
@@ -22,6 +22,7 @@ def add_thread(request):
             form = form.save(commit=False)
             form.author = request.user  # set logged user as an author and then save
             form.save()
+            return redirect('index')
 
     else:
         form = AddThreadForm()
