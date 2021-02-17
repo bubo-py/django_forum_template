@@ -21,11 +21,13 @@
 <div id="navigation">
   <ul>
     <li id="lhome"><a href="#00">Home</a></li>
-    <li id="lproducts"><a href="#01">Products</a></li>
-    <li id="lsolutions"><a href="#02">Solutions</a></li>
-    <li id="lmysterious"><a href="#03">Mysterious</a></li>
-    <li id="labout"><a href="#04">About Us</a></li>
-    <li id="lcontact"><a href="#05">Contact Us</a></li>
+    {% if user.is_authenticated %}
+        <li id="logout"><a href="{% url 'logout' %}">logout</a></li>
+
+    {% else %}
+        <li id="login"><a href="{% url 'login' %}">login</a></li>
+        <li id="register"><a href="{% url 'register' %}">register</a></li>
+    {% endif %}
   </ul>
 </div>
 <div id="wrapper">
