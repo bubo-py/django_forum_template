@@ -171,7 +171,7 @@ body
 #navigation a:link,
 #navigation a:visited
 {
-	color: #002244;
+	color: #0022445;
 	font-weight: bold;
 	text-transform: uppercase;
 }
@@ -189,41 +189,6 @@ li#lhome a:active
 	background-position: 0 -3px;
 }
 
-li#lproducts a:hover,
-li#lproducts a:active
-{
-	background-position: 0 1px;
-}
-
-li#lsolutions a:hover,
-li#lsolutions a:active
-{
-	background-position: 0 2px;
-}
-
-li#lmysterious a:hover,
-li#lmysterious a:active
-{
-	background-position: 0 -1px;
-}
-
-li#labout a:hover,
-li#labout a:active
-{
-	background-position: 0 -2px;
-}
-
-li#lcontact a:hover,
-li#lcontact a:active
-{
-	background-position: 0 -3px;
-}
-
-/* body#babout li#labout a
-{
-	color: #99bbdd;
-	background: #333333 url(images/navigation_hover.gif) 0 -2px repeat;
-} */
 
 /* Sidebar */
 
