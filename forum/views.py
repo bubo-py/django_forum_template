@@ -1,6 +1,7 @@
 from .models import ForumThread
 from django.shortcuts import render, get_object_or_404, redirect
 from .forms import AddThreadForm
+from django.contrib.auth.decorators import login_required
 
 
 def index(request):
@@ -13,10 +14,10 @@ def thread_detail(request, thread_id):
     return render(request, 'forum/thread_detail.html', {'thread': thread})
 
 
+@login_required
 def add_thread(request):
     if request.method == 'POST':
         form = AddThreadForm(request.POST)
-        form.author = request.user
         if form.is_valid():
             # this saves the thread but doesn't commit to db
             form = form.save(commit=False)
