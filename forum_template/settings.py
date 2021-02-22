@@ -127,3 +127,9 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'index'
+
+# PASSWORD_RESET_URL = 'password_reset'
+
+# for testing purposes of the password reset stuff
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = '1025'
