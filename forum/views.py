@@ -6,7 +6,8 @@ from django.contrib.auth.decorators import login_required
 
 def index(request):
     template = 'forum/index.html'
-    return render(request, template)
+    threads = ForumThread.objects.all()
+    return render(request, template, {'threads': threads})
 
 
 def thread_detail(request, thread_id):
