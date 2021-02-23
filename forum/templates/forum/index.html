@@ -33,20 +33,12 @@
 <div id="wrapper">
   <div id="content-wrapper">
     <div id="content">
-      <h4>A Definition List</h4>
+      <h4>Latest posts</h4>
       <dl>
-        <dt>Sixpence</dt>
-        <dd> An awesome new template. <em> Created by <a href="http://www.nikhedonia.com/" title="SimplyGold">Sadhana Ganapathiraju</a>.
-          Feel free to use it, modify it, and take it apart to learn from it. A mention and a link isn't
-          required but much appreciated. I'll stop abusing the definition list now. ;-) </em> </dd>
-        <dt>Intrepid</dt>
-        <dd>Courageous. <em>Harry's thinks he's intrepid, but actually, he's only stupid.</em></dd>
-        <dt>Inconsequential</dt>
-        <dd>Unimportant. <em>The fact that you don't know the meaning of inconsequential is <del>in</del>consequential. </em></dd>
-        <dt>Benevolent</dt>
-        <dd>Good/nice/generous. <em>Will the benevolent god please raise their hand?</em></dd>
-        <dt>Fabricated</dt>
-        <dd class="last">Made-up. <em>Lies are but fabricated truths.</em></dd>
+          {% for thread in threads %}
+        <dt>{{ thread.heading }}</dt>
+        <dd>{{ thread.content|slice:":65" }}</dd>
+            {% endfor %}
       </dl>
       <h6>Other Stuff</h6>
       <blockquote>
