@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 def index(request):
     template = 'forum/index.html'
-    threads = ForumThread.objects.all()
+    threads = ForumThread.objects.all().order_by('-date_posted')
     return render(request, template, {'threads': threads})
 
 
