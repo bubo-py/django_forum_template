@@ -67,8 +67,13 @@
         <li>Now I know my 1, 2, 3; I can go to 4, <strong>5</strong>, 6.</li>
         <li><strong>Six</strong>ty-<strong>six</strong> on <strong>6</strong>/<strong>6</strong>/<strong>6</strong>00<strong>6</strong></li>
       </ol>
-      <h3>Currently logged as:</h3>
-      <p>{{ request.user }}</p>
+      {% if user.is_authenticated %}
+          <h3>Currently logged as:</h3>
+          <p>{{ request.user }}</p>
+      {% else %}
+          <h3><a href="{% url 'login' %}">Log in</a> to share your thoughts with others!</h3>
+          <p>If you don't have account, register <a href="{% url 'register' %}">here.</a></p>
+      {% endif %}
     </div>
   </div>
 </div>
