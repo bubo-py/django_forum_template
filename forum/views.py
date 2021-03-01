@@ -1,19 +1,8 @@
 from .models import ForumThread
-from django.shortcuts import render, get_object_or_404, redirect
+# from django.shortcuts import render, get_object_or_404, redirect
 from .forms import AddThreadForm
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView
-
-
-# def index(request):
-#     template = 'forum/index.html'
-#     threads = ForumThread.objects.all().order_by('-date_posted')[:5]
-#     return render(request, template, {'threads': threads})
-
-
-# def thread_detail(request, thread_id):
-#     thread = get_object_or_404(ForumThread, pk=thread_id)
-#     return render(request, 'forum/thread_detail.html', {'thread': thread})
 
 
 class ThreadListView(ListView):
