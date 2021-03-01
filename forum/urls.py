@@ -5,6 +5,6 @@ from . import views
 
 urlpatterns = [
     path('', ThreadListView.as_view(), name='index'),
-    path('<int:pk>/', ThreadDetailView.as_view(), name='detail'),
+    path('thread/<int:pk>/', ThreadDetailView.as_view(), name='detail'),
     path('add/', views.add_thread, name='add')
 ]
