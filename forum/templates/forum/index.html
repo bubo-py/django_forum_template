@@ -33,11 +33,11 @@
 <div id="wrapper">
   <div id="content-wrapper">
     <div id="content">
-      <h4>Latest posts</h4>
+      <h4>Latest threads || <a href="{% url 'add' %}">Add a thread!</a></h4>
       <dl>
           {% for thread in threads %}
-        <dt><a href="{% url 'detail' thread.id %}">{{thread.heading}}</a></dt>
-        <dd>{{ thread.content|slice:":65" }} <br>Posted by {{ thread.author }} on {{ thread.date_posted }}</dd>
+        <dt><a href="{% url 'detail' thread.id %}">{{ thread.heading }}</a></dt>
+        <dd>{{ thread.content|slice:":55" }} <br>Posted by {{ thread.author }} on {{ thread.date_posted }}</dd>
             {% endfor %}
       </dl>
       <h6>Other Stuff</h6>
