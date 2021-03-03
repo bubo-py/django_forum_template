@@ -22,6 +22,7 @@
   <ul>
     <li id="lhome"><a href="{% url 'index' %}">Home</a></li>
     {% if user.is_authenticated %}
+        <li id="profile"><a href="{% url 'profile' %}">my profile</a></li>
         <li id="logout"><a href="{% url 'logout' %}">logout</a></li>
 
     {% else %}
@@ -37,7 +38,7 @@
       <dl>
           {% for thread in threads %}
         <dt><a href="{% url 'detail' thread.id %}">{{ thread.heading }}</a></dt>
-        <dd>{{ thread.content|slice:":55" }} <br>Posted by {{ thread.author }} on {{ thread.date_posted }}</dd>
+        <dd>{{ thread.content|slice:":55" }} <br>Posted by <a href="#">{{ thread.author }}</a> on {{ thread.date_posted }}</dd>
             {% endfor %}
       </dl>
       <h6>Other Stuff</h6>
