@@ -123,6 +123,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# Media files (user uploads like pictures, files etc.)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_URL = 'login'
@@ -133,7 +137,3 @@ LOGIN_REDIRECT_URL = 'index'
 # for testing purposes of the password reset stuff
 EMAIL_HOST = 'localhost'
 EMAIL_PORT = '1025'
-
-# Media files (user uploads like pictures, files etc.)
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
