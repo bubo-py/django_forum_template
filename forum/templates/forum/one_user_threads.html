@@ -1,0 +1,14 @@
+{% if user.is_authenticated %}
+<h2>{{ user.username }}'s all threads</h2>
+<img src="{{ user.userprofile.user_avatar.url }}" alt="user's picture should be here">
+
+
+{% for thread in threads %}
+<h1>{{ thread.heading }}</h1>
+
+<h4>{{ thread.content }}</h4>
+
+<p>Posted by {{ thread.author }} on {{ thread.date_posted }}</p>
+<br>
+{% endfor %}
+{% endif %}
