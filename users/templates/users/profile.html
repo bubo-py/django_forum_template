@@ -1,4 +1,4 @@
-{% if authenticated %}
+{% if user.is_authenticated %}
 <h2>{{ user.username }}'s profile page</h2>
 <img src="{{ user.userprofile.user_avatar.url }}" alt="user's picture should be here">
 {% endif %}
