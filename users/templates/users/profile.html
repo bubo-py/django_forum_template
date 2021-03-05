@@ -1,4 +1,21 @@
 {% if user.is_authenticated %}
+{% load crispy_forms_tags %}
 <h2>{{ user.username }}'s profile page</h2>
 <img src="{{ user.userprofile.user_avatar.url }}" alt="user's picture should be here">
+
+<br>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <h4>your profile info</h4>
+    <table>
+        {{ user_form|crispy }}
+        {{ profile_form|crispy }}
+    </table>
+
+    <br>
+    <input type="submit" value="ok update">
+    <br>
+</form>
+
 {% endif %}
