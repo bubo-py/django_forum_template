@@ -1,8 +1,9 @@
 from .models import ForumThread
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import AddThreadForm
 from django.contrib.auth.decorators import login_required
 from django.views.generic import ListView, DetailView
+from django.contrib.auth.models import User
 
 
 class ThreadListView(ListView):
@@ -16,6 +17,17 @@ class ThreadListView(ListView):
 class ThreadDetailView(DetailView):
     model = ForumThread
     context_object_name = 'thread'
+
+
+class OneUserThreadsView(ListView):
+    model = ForumThread
+    template_name = 'forum/one_user_threads.html'
+    context_object_name = 'threads'
+    ordering = '-date_posted'
+
+    def get_queryset(self):
+        u = get_object_or_404(User, username=self.kwargs.get('username'))
+        return ForumThread.objects.filter(author=u)
 
 
 @login_required
