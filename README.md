@@ -3,7 +3,7 @@ The website has every core functionality so far, but keep in mind it is still in
 The main functionalities include:
   - Creating, logging, deleting and updating user(and user's profile)
   - Creating, updating and deleting posts(threads)
-  - Handling users in a secure ways
+  - Handling users in a secure way
   - Password reset mechanism
   - Static content delivery
 
