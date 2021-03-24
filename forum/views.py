@@ -14,6 +14,13 @@ class ThreadListView(ListView):
     paginate_by = 5
 
 
+class AllThreadListView(ListView):
+    model = ForumThread
+    template_name = 'forum/all_threads.html'
+    context_object_name = 'threads'
+    ordering = '-date_posted'
+
+
 class ThreadDetailView(DetailView):
     model = ForumThread
     context_object_name = 'thread'
