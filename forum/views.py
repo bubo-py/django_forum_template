@@ -26,9 +26,9 @@ class ThreadDetailView(DetailView):
     context_object_name = 'thread'
 
 
-class OneUserThreadsView(ListView):
+class OnesThreadsView(ListView):
     model = ForumThread
-    template_name = 'forum/one_user_threads.html'
+    template_name = 'forum/ones_threads.html'
     context_object_name = 'threads'
     ordering = '-date_posted'
 
