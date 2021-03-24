@@ -38,8 +38,9 @@
       <dl>
           {% for thread in threads %}
         <dt><a href="{% url 'detail' thread.id %}">{{ thread.heading }}</a></dt>
-        <dd>{{ thread.content|slice:":55" }} <br>Posted by <a href="{% url 'one-threads-list' thread.author %}">{{ thread.author }}</a> on {{ thread.date_posted }}</dd>
+        <dd>{{ thread.content|slice:":55" }} <br>Posted by <a href="{% url 'ones_threads_list' thread.author %}">{{ thread.author }}</a> on {{ thread.date_posted }}</dd>
             {% endfor %}
+            <p>Not enough? Check all threads <a href="{% url 'all_threads' %}">here!</a></p>
       </dl>
       <h6>Other Stuff</h6>
       <blockquote>

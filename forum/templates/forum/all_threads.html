@@ -1,0 +1,10 @@
+{% if user.is_authenticated %}
+
+    {% for thread in threads %}
+        <h1>{{ thread.heading }}</h1>
+
+        {{ thread.content|slice:":55" }} <br>Posted by <a href="{% url 'ones_threads_list' thread.author %}">{{ thread.author }}</a> on {{ thread.date_posted }}
+        <br>
+    {% endfor %}
+
+{% endif %}
