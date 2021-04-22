@@ -1,5 +1,5 @@
 ## A forum website made in Django
-The website has every core functionality so far, but keep in mind it is still in development.
+The website uses every core Django functionality and has been built for learning purposes.
 The main functionalities include:
   - Creating, logging, deleting and updating user(and user's profile)
   - Creating, updating and deleting posts(threads)
